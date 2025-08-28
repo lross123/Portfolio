@@ -1,0 +1,618 @@
+/*
+  Portfolio Website Stylesheet
+
+  This stylesheet defines a clean, modern look for a multi‑page
+  portfolio website. Colors are chosen to create high contrast
+  between the dark background and bright accent elements. The
+  layout uses flexbox to create responsive containers and cards.
+*/
+
+:root {
+  /* Unified colour palette matching the education page */
+  /* Accent colour used throughout the site (mint/teal) */
+  --primary-color: #6ee7b7;
+  --primary-color-hover: #52cca9;
+  /* Page background colour */
+  --secondary-color: #0d1628;
+  /* Card background colour */
+  --card-color: #1b263b;
+  /* Primary text colour */
+  --text-color: #e7eef7;
+  /* Headings inherit the primary text colour */
+  --heading-color: #e7eef7;
+  /* Accent colour for muted text and icons */
+  --accent-color: #6ee7b7;
+  /* Increase border radius for smoother cards */
+  --radius: 14px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Header and navigation */
+header {
+  background-color: var(--secondary-color);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.header .container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav li {
+  margin-left: 20px;
+}
+
+.nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--primary-color);
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--heading-color);
+  background-color: rgba(10, 25, 47, 0.6);
+  padding: 30px;
+  border-radius: var(--radius);
+  width: 80%;
+  max-width: 600px;
+}
+
+.hero-overlay h1 {
+  font-size: 2.5rem;
+  margin: 0 0 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hero-overlay p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Generic button */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-hover);
+}
+
+/* Containers */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 60px auto;
+}
+
+/* Section headings */
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--heading-color);
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* About section */
+.about p {
+  margin-bottom: 1rem;
+}
+
+.profile-links a {
+  margin-right: 15px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.profile-links a:hover {
+  text-decoration: underline;
+}
+
+/* Project cards */
+/* Update project card styling to match the dark card aesthetic used on the education page.
+   Project cards now extend the generic .card style with their own overrides for summary
+   text and strong highlights. */
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 18px 0;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.32);
+  border-color: rgba(110,231,183,0.25);
+}
+.project-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+  color: var(--text);
+}
+.project-card .summary {
+  font-style: italic;
+  margin-bottom: 15px;
+  color: var(--muted);
+}
+.project-card .details p {
+  margin: 4px 0;
+  color: var(--text);
+}
+.project-card strong {
+  color: var(--accent);
+}
+
+/* Skills section */
+.skills-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.skill-category {
+  flex: 1 1 250px;
+  background-color: var(--card-color);
+  padding: 20px;
+  border-radius: var(--radius);
+}
+
+.skill-category h3 {
+  margin-top: 0;
+  color: var(--heading-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.skill-category ul {
+  list-style-type: circle;
+  padding-left: 20px;
+}
+
+/* Certifications and education */
+.cert-list,
+.edu-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cert-list li,
+.edu-list li {
+  background-color: var(--card-color);
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: var(--radius);
+}
+
+/* CV embed */
+.cv-container {
+  text-align: center;
+}
+
+.cv-container embed {
+  width: 100%;
+  height: 600px;
+}
+
+/* Blog posts */
+.blog-post {
+  background-color: var(--card-color);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.blog-post h3 {
+  color: var(--heading-color);
+  margin-top: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Contact form */
+.contact-form {
+  background-color: var(--card-color);
+  border-radius: var(--radius);
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--heading-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #0a1931;
+  color: var(--text-color);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: var(--primary-color-hover);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+  .nav li {
+    margin-left: 10px;
+  }
+  .skills-section {
+    flex-direction: column;
+  }
+  .hero-overlay {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+
+
+
+
+/* Education card container */
+.edu-card {
+  background: #ffffff;           /* clean card background */
+  border: 1px solid #e0e0e0;     /* light border */
+  border-radius: 12px;           /* rounded corners */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* soft shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-3px);   /* lift on hover */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+/* Title */
+.edu-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* Date range styling */
+.edu-card .date-range {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #777;
+  margin-left: 8px;
+}
+
+/* Details section */
+.edu-card .details {
+  margin-top: 12px;
+}
+
+/* Tags container */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* spacing between tags */
+  margin-top: 8px;
+}
+
+/* Individual tags */
+.tag {
+  background: #f0f4ff;            /* soft blue background */
+  color: #003366;                 /* darker text */
+  padding: 6px 12px;
+  border-radius: 20px;            /* pill-shaped */
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+
+
+
+/* ---- Site palette (tweak here if needed) ---- */
+:root{
+  --bg: #0d1628;                 /* page background */
+  --card: #1b263b;               /* card background */
+  --card-border: rgba(255,255,255,0.06);
+  --text: #e7eef7;               /* primary text */
+  --muted: #9fb0c3;              /* secondary text */
+  --accent: #6ee7b7;             /* mint/teal accent from navbar title */
+  --pill-bg: #223148;            /* tag pill background */
+  --pill-border: rgba(255,255,255,0.08);
+}
+
+/* Make the section blend with the rest of the dark page */
+section#education, .education-section{
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ---- Education Card ---- */
+.edu-card{
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 20px;
+  margin: 18px 0;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.edu-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.32);
+  border-color: rgba(110,231,183,0.25); /* subtle mint edge on hover */
+}
+
+/* Title + date */
+.edu-card h3{
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  margin: 0 0 10px 0;
+}
+.edu-card h3 .date-range{
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-left: 8px;
+}
+
+/* Details */
+.edu-card .details{
+  margin-top: 10px;
+}
+.edu-card .details > p strong{
+  color: var(--accent);     /* “Selected Results” in mint */
+  font-weight: 700;
+}
+
+/* ---- Result tags (pills) ---- */
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.tag{
+  background: var(--pill-bg);
+  color: var(--text);
+  border: 1px solid var(--pill-border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+  transition: background .15s ease, border-color .15s ease, transform .15s ease;
+  white-space: nowrap;
+}
+.tag:hover{
+  background: #253756;
+  border-color: rgba(110,231,183,0.28);
+  transform: translateY(-1px);
+}
+
+/* Small screens: tighter spacing */
+@media (max-width: 640px){
+  .edu-card{ padding: 16px; }
+  .tag{ font-size: 0.85rem; padding: 5px 10px; }
+}
+
+
+
+
+
+/* ===== Global palette (match your dark theme) ===== */
+:root{
+  --bg: #0d1628;
+  --card: #1b263b;
+  --card-border: rgba(255,255,255,0.06);
+  --text: #e7eef7;
+  --muted: #9fb0c3;
+  --accent: #6ee7b7;
+
+  --pill-bg: #223148;
+  --pill-border: rgba(255,255,255,0.08);
+}
+
+/* Page baseline for all sections */
+.section-dark{
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===== Generic card used everywhere ===== */
+.card{
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 20px;
+  margin: 18px 0;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.32);
+  border-color: rgba(110,231,183,0.25);
+}
+.card h3, .card h4{
+  color: var(--text);
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.card .subtle{ color: var(--muted); }
+
+/* Grid helpers for cards */
+.card-grid{
+  display: grid;
+  gap: 18px;
+}
+@media (min-width: 640px){ .card-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (min-width: 1000px){ .card-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); } }
+
+/* ===== Pills (tags) used for Results, Tools, Skills ===== */
+.pills{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.pill{
+  background: var(--pill-bg);
+  color: var(--text);
+  border: 1px solid var(--pill-border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+  white-space: nowrap;
+  transition: background .15s ease, border-color .15s ease, transform .15s ease;
+}
+.pill:hover{
+  background: #253756;
+  border-color: rgba(110,231,183,0.28);
+  transform: translateY(-1px);
+}
+
+/* ===== Section-specific sugar (optional but nice) ===== */
+
+/* Education */
+.edu-card{ /* extend .card */ }
+.edu-card .label{ color: var(--accent); font-weight: 700; }
+
+/* Certificates */
+.cert-card .issuer{ color: var(--muted); font-weight: 600; }
+.cert-card .meta{ color: var(--muted); font-size: .95rem; }
+
+/* Experience */
+.exp-card .role{ font-weight: 700; }
+.exp-card .company{ color: var(--muted); font-weight: 600; }
+.exp-card .date{ color: var(--muted); }
+.exp-card ul{ margin: 10px 0 0 18px; }
+.exp-card li{ margin: 6px 0; }
+
+/* Projects */
+.project-card .summary{ color: var(--muted); }
+.project-card .label{ color: var(--accent); font-weight: 700; }
+
+/* Skills */
+.skill-group h4{ margin-bottom: 8px; }
+.skill-group .pills{ margin-top: 6px; }
+
+/* Fine-tune small screens */
+@media (max-width: 640px){
+  .card{ padding: 16px; }
+  .pill{ font-size: 0.85rem; padding: 5px 10px; }
+}
+
+
+
+
+
+
+
+
+

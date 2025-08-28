@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Luke Ross's Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">Luke Ross's Portfolio</div>
+        <nav class="nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="certifications.html">Certificates</a></li>
+            <li><a href="experience.html">Experience</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <section class="container projects">
+      <h2>Projects</h2>
+
+
+      <!-- Research & Machine Learning Projects -->
+      <h3 style="color: var(--accent); margin-top:40px;">Research &amp; Machine Learning Projects</h3>
+      <div class="card-grid">
+
+
+
+        <div class="card project-card">
+  <h3>SpaceX Flight Landing Prediction</h3>
+  <p class="summary">Developed a machine learning pipeline to predict Falcon 9 first-stage landing success, supporting cost-reduction strategies in commercial spaceflight.</p>
+  <div class="details">
+    <p><strong>Problem:</strong> Rocket launches are extremely costly. Predicting the likelihood of successful landings allows SpaceX to plan reusability strategies and reduce mission costs.</p>
+    <p><strong>Approach:</strong> Collected launch data from SpaceX API and web-scraping sources; cleaned and structured datasets; performed exploratory analysis with interactive maps and visualisations; engineered features (payload mass, orbit, flight site, booster type); trained classification models (logistic regression, decision tree, random forest, SVM); and evaluated performance with accuracy, F1, and cross-validation.</p>
+    <p><strong>Results:</strong> Achieved strong predictive performance on test data (≈85–90% accuracy depending on the model). Produced clear dashboards and visuals of launch outcomes by location and year. Demonstrated how data science can inform aerospace engineering decisions and cost-saving strategies.</p>
+  </div>
+  <p><strong>Tools:</strong> Python, scikit-learn, pandas, matplotlib, Seaborn, Folium (interactive maps), Jupyter.</p>
+  <p><strong>Links:</strong> <a href="https://github.com/lross123/SpaceX-Project-IBM">GitHub</a></p>
+</div>
+
+
+   
+        <div class="card project-card">
+    <h3>Simulation-Based Mathematical Models & Parameter Estimation to Interpret Tissue Growth Experiments</h3>
+    <p class="summary">Framework to forecast tissue growth and determine optimal conditions for artificial red blood cell generation.</p>
+    <div class="details">
+      <p><strong>Problem:</strong> Wet-lab experimentation to optimise growth conditions is costly and time-consuming.</p>
+      <p><strong>Approach:</strong> Discretised a continuum model for numerical computation; implemented simulations in Python &amp; Julia; preprocessed large multi-modal clinical datasets; performed parameter identifiability analysis and evaluated statistical fit before generating forward simulations across environments.</p>
+      <p><strong>Results:</strong> Delivered a reproducible simulation framework that forecasts tissue growth under varying conditions, reducing reliance on extensive wet-lab iterations.</p>
+    </div>
+    <p><strong>Tools:</strong> Python, Julia, NumPy/SciPy, Jupyter, Git.</p>
+    <p><strong>Links:</strong> <a href="#">GitHub</a></p>
+  </div>
+
+        <div class="card project-card">
+    <h3>PK/PD Modelling to Assess the Effects of Anti-Cancer Agents on Tumour Volume</h3>
+    <p class="summary">Dose-response modelling to forecast optimal dosing regimens, including combination therapy effects.</p>
+    <div class="details">
+      <p><strong>Problem:</strong> Need to predict tumour-volume response under different dosing schedules, including combinations, from sensitive preclinical data.</p>
+      <p><strong>Approach:</strong> Collaborated with GSK; adapted oncology PK/PD models from literature to capture combination effects; calibrated parameters to preclinical datasets using MATLAB, Python &amp; Monolix; validated with held-out data.</p>
+      <p><strong>Results:</strong> Produced regimen recommendations from fitted models and scenario analyses to inform experimental planning.</p>
+    </div>
+    <p><strong>Tools:</strong> MATLAB, Python, Monolix, pandas, matplotlib.</p>
+    <p><strong>Links:</strong> <a href="#">GitHub</a></p>
+  </div>
+
+        <div class="card project-card">
+    <h3>AI-Based EEG Decoding for Assistive Communication in Locked-In Syndrome</h3>
+    <p class="summary">End-to-end signal-to-decision pipeline for decoding noisy EEG to support communication.</p>
+    <div class="details">
+      <p><strong>Problem:</strong> EEG signals are noisy and non-stationary, making reliable intent decoding difficult.</p>
+      <p><strong>Approach:</strong> Built a MATLAB pipeline with denoising and feature extraction; trained classification models with train/validation/test splits; evaluated with accuracy, sensitivity and specificity.</p>
+      <p><strong>Results:</strong> Achieved robust decoding performance with clear metric reporting, supporting feasibility for assistive interfaces.</p>
+    </div>
+    <p><strong>Tools:</strong> MATLAB (Signal Processing), Statistics &amp; Machine Learning Toolbox.</p>
+    <p><strong>Links:</strong> <a href="#">GitHub</a></p>
+  </div>
+
+        <div class="card project-card">
+    <h3>Cardiac Image Segmentation</h3>
+    <p class="summary">Statistical learning pipelines in R to segment cardiac images with high accuracy.</p>
+    <div class="details">
+      <p><strong>Problem:</strong> Need accurate, interpretable segmentation for downstream cardiac analysis.</p>
+      <p><strong>Approach:</strong> Prototyped multiple learners in RStudio (logistic regression, random forest, clustering); compared pipelines via cross-validation; reported per-class metrics.</p>
+      <p><strong>Results:</strong> Selected a high-performing segmentation approach suitable for reproducible clinical analysis workflows.</p>
+    </div>
+    <p><strong>Tools:</strong> R, RStudio, tidyverse, caret.</p>
+    <p><strong>Links:</strong> <a href="#">GitHub</a></p>
+  </div>
+
+
+
+
+
+   
+      </div>
+    </section>
+
+
+    <footer class="footer">
+      <p>&copy; 2025 Luke Ross's Portfolio. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
